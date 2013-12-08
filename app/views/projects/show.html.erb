@@ -16,7 +16,7 @@
   </p>
   <h3>Pledging Ends</h3>
   <p>
-    <%= @project.pledging_ends_on %>
+    <%= format_project_pending(@project) %>
   </p>
 </article>
 <%= link_to "All Projects", projects_path %>

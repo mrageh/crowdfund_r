@@ -19,3 +19,4 @@ Migrating to AddFieldsToProjects (20130228190204)
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130228190204')[0m
   [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130228190011')
+  [1m[36mProject Load (1.4ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
