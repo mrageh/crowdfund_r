@@ -50,4 +50,5 @@ end
 
 group :test do
   gem "capybara"
+  gem 'guard-rspec', require: false
 end

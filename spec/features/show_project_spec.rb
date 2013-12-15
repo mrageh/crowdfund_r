@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe "Viewing a individual project" do
   it "shows a project's details" do
-    project = Project.create(project_attributes(target_pledge_amount: 100, pledging_ends_on: 1.day.from_now))
+    project = Project.create(project_attributes(target_pledge_amount: 100))
 
     visit project_path(project)
 
@@ -27,5 +27,6 @@ describe "Viewing a individual project" do
     visit project_path(project)
 
     expect(page).to have_text("All Done!")
+    expect(page).to have_text("Edit")
   end
 end
