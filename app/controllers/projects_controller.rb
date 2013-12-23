@@ -17,6 +17,16 @@ class ProjectsController < ApplicationController
     redirect_to project_path(@project)
   end
 
+  def new
+    @project = Project.new
+  end
+
+  def create
+    @project = Project.new(project_params)
+    @project.save
+    redirect_to project_path(@project)
+  end
+
   private
 
   def project_params

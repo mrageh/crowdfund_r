@@ -4622,3 +4622,338 @@ Processing by ProjectsController#show as HTML
   Rendered projects/show.html.erb within layouts/application (0.6ms)
 Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:18:15 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff75a5d5f80,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:15 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/1/edit" for 127.0.0.1 at 2013-12-22 19:18:15 -0700
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/edit.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 81ms (Views: 58.1ms | ActiveRecord: 0.3ms)
+Started PATCH "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:15 -0700
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Adeer", "description"=>"Well I cannot build it", "target_pledge_amount"=>"100", "pledging_ends_on(1i)"=>"2013", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"26", "website"=>"http://ikky.com"}, "commit"=>"Update Project", "id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Unpermitted parameters: description
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "projects" SET "name" = ?, "website" = ?, "pledging_ends_on" = ?, "updated_at" = ? WHERE "projects"."id" = 1[0m  [["name", "Adeer"], ["website", "http://ikky.com"], ["pledging_ends_on", Sat, 26 Oct 2013], ["updated_at", Mon, 23 Dec 2013 02:18:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:15 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff75997e098,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff75bc6ef80,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Sat, 21 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff7599951d0,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff75b57c1a0,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a community project"], ["name", "Community Project"], ["pledging_ends_on", Mon, 30 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff75bc341f0,'0.2E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-b.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a person project"], ["name", "Personal Project"], ["pledging_ends_on", Thu, 23 Jan 2014], ["target_pledge_amount", #<BigDecimal:7ff75bc6cbb8,'0.3E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-c.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff759b38c08,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/projects" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7ff75a345748,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:18:16 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:18:16 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fa1b2edb1f0,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["description", "A description of a community project"], ["name", "Community Project"], ["pledging_ends_on", Mon, 30 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fa1b2f09d70,'0.2E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["website", "http://project-b.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["description", "A description of a person project"], ["name", "Personal Project"], ["pledging_ends_on", Thu, 23 Jan 2014], ["target_pledge_amount", #<BigDecimal:7fa1b2f19630,'0.3E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["website", "http://project-c.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects" for 127.0.0.1 at 2013-12-22 19:20:26 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 82ms
+  [1m[35m (1.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fa1b1e96470,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:20:26 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Tue, 24 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fa1b1b9c850,'0.1E3',9(36)>], ["updated_at", Mon, 23 Dec 2013 02:20:26 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:20:26 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:21:22 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 34ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:21:53 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 79ms (Views: 56.8ms | ActiveRecord: 0.4ms)
+Started GET "/project/new" for 127.0.0.1 at 2013-12-22 19:21:53 -0700
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:22:32 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 79ms (Views: 60.2ms | ActiveRecord: 0.7ms)
+Started GET "/project/new" for 127.0.0.1 at 2013-12-22 19:22:32 -0700
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:22:55 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 72ms (Views: 52.2ms | ActiveRecord: 0.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:22:55 -0700
+Processing by ProjectsController#new as HTML
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:23:09 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 80ms (Views: 59.5ms | ActiveRecord: 0.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:23:09 -0700
+Processing by ProjectsController#new as HTML
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:23:13 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 78ms (Views: 58.8ms | ActiveRecord: 0.6ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:23:13 -0700
+Processing by ProjectsController#new as HTML
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:24:08 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 78ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:24:09 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:24:56 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 77ms (Views: 57.1ms | ActiveRecord: 0.6ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:24:57 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-12-22 19:24:57 -0700
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:25:52 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 81ms (Views: 60.7ms | ActiveRecord: 0.5ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:25:52 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-12-22 19:25:53 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Kids", "description"=>"A fund raising events for the orphaned kids", "target_pledge_amount"=>"100000", "pledging_ends_on(1i)"=>"2014", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"30", "website"=>"www.poorkids.com"}, "commit"=>"Create Project"}
+Unpermitted parameters: description
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "projects" ("created_at", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:25:53 UTC +00:00], ["name", "Kids"], ["pledging_ends_on", Thu, 30 Oct 2014], ["target_pledge_amount", #<BigDecimal:7ff9249dc108,'0.1E6',9(18)>], ["updated_at", Mon, 23 Dec 2013 02:25:53 UTC +00:00], ["website", "www.poorkids.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 8ms (ActiveRecord: 3.4ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:25:53 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35m (2.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:26:27 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 80ms (Views: 59.2ms | ActiveRecord: 0.5ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:26:27 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-12-22 19:26:28 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Kids", "description"=>"A fund raising events for the orphaned kids", "target_pledge_amount"=>"100000", "pledging_ends_on(1i)"=>"2014", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"30", "website"=>"www.poorkids.com"}, "commit"=>"Create Project"}
+Unpermitted parameters: description
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "projects" ("created_at", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:26:28 UTC +00:00], ["name", "Kids"], ["pledging_ends_on", Thu, 30 Oct 2014], ["target_pledge_amount", #<BigDecimal:7fa52c3a4318,'0.1E6',9(18)>], ["updated_at", Mon, 23 Dec 2013 02:26:28 UTC +00:00], ["website", "www.poorkids.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:26:28 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-22 19:26:31 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 65ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-22 19:26:31 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-12-22 19:26:31 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Kids", "description"=>"A fund raising events for the orphaned kids", "target_pledge_amount"=>"100000", "pledging_ends_on(1i)"=>"2014", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"30", "website"=>"www.poorkids.com"}, "commit"=>"Create Project"}
+Unpermitted parameters: description
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "projects" ("created_at", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 02:26:31 UTC +00:00], ["name", "Kids"], ["pledging_ends_on", Thu, 30 Oct 2014], ["target_pledge_amount", #<BigDecimal:7fcfeb606ce8,'0.1E6',9(18)>], ["updated_at", Mon, 23 Dec 2013 02:26:31 UTC +00:00], ["website", "www.poorkids.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-22 19:26:31 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35m (1.9ms)[0m  rollback transaction
