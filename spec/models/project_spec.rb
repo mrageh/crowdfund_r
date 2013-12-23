@@ -12,4 +12,24 @@ describe "A project" do
 
     expect(project.pledging_expired?).to eq(false)
   end
+
+  it "is only listed if it is accepting pledges" do
+    project = Project.create(project_attributes(pledging_ends_on: 2.days.from_now))
+
+    expect(Project.ongoing).to include(project)
+  end
+
+  it "is not listed if is not accepting pledges" do
+    project = Project.create(project_attributes(pledging_ends_on: 3.days.ago))
+
+    expect(Project.ongoing).not_to include(project)
+  end
+
+  it "is ordered by which one has the nearest ending date for pledges" do
+    project1 = Project.create(project_attributes(pledging_ends_on: 3.days.from_now))
+    project2 = Project.create(project_attributes(pledging_ends_on: 2.days.from_now))
+    project3 = Project.create(project_attributes(pledging_ends_on: 1.days.from_now))
+
+    expect(Project.ongoing).to eq([project3, project2, project1])
+  end
 end

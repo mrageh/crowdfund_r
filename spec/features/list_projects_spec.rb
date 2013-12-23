@@ -34,4 +34,11 @@ describe "Viewing the list of projects" do
     expect(page).to have_text(projectA.website)
   end
 
+  it "does not show a project that is no longer accepting pledges" do
+    project = Project.create(project_attributes(pledging_ends_on: 1.day.ago))
+
+    visit projects_path
+
+    expect(page).not_to have_text(project.name)
+  end
 end
