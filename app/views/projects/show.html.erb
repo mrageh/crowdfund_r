@@ -14,12 +14,18 @@
   <p>
     <%= @project.website %>
   </p>
+  <h3>Team Members</h3>
+  <p>
+    <%= @project.team_members %>
+  </p>
   <h3>Pledging Ends</h3>
   <p>
-    <%= format_project_pending(@project) %>
+    <%= format_pledging_ends_on(@project) %>
   </p>
+  <h3>Image</h3>
+  <%= image_for(@project) %>
 </article>
-<%= link_to "All Projects", projects_path %> |
-<%= link_to "Edit", edit_project_path(@project) %>
-<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"} %>
 
+<%= link_to("All Projects", projects_path) %> |
+<%= link_to "Edit", edit_project_path(@project) %> |
+<%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -6,4 +6,8 @@ class Project < ActiveRecord::Base
   def self.ongoing
     where("pledging_ends_on >= ?", Time.now).order("pledging_ends_on")
   end
+
+  def image_blank?
+    image_file_name.blank?
+  end
 end

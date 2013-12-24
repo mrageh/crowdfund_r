@@ -32,4 +32,10 @@ describe "A project" do
 
     expect(Project.ongoing).to eq([project3, project2, project1])
   end
+
+  it "can have a image" do
+    project = Project.create(project_attributes(image_file_name: nil))
+
+    expect(Project.last.image_blank?).to eq(true)
+  end
 end

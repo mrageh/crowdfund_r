@@ -29,6 +29,7 @@ describe "Viewing the list of projects" do
     expect(page).to have_text(projectC.name)
 
     expect(page).to have_text(projectA.description)
+    expect(page).to have_selector("img[src$='#{projectA.image_file_name}']")
     expect(page).to have_text("$100.00")
     expect(page).to have_text("1 day remaining")
     expect(page).to have_text(projectA.website)

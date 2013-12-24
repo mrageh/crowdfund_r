@@ -487,3 +487,158 @@ Processing by ProjectsController#edit as HTML
   [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "2"]]
   Rendered projects/edit.html.erb within layouts/application (20.2ms)
 Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddMoreFieldsToProjects (20131224035904)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "projects" ADD "team_members" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "projects" ADD "image_file_name" varchar(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20131224035904"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:07:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:07:23.958449')
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:07:23.958449') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (75.6ms)
+Completed 500 Internal Server Error in 103ms
+
+ActionView::Template::Error (undefined method `format_pledging_ends_on' for #<#<Class:0x007fe8f9671be8>:0x007fe8f9670f90>):
+    20:     </tr>
+    21:     <tr>
+    22:       <th>Pledging Ends:</th>
+    23:       <td><%= format_pledging_ends_on(project) %></td>
+    24:     </tr>
+    25:   </table>
+    26: </article>
+  app/views/projects/index.html.erb:23:in `block in _app_views_projects_index_html_erb__2578277341068527818_70319298317220'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__2578277341068527818_70319298317220'
+
+
+  Rendered /Users/Home/.rvm/gems/ruby-2.0.0-p247@learn-rails/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/Home/.rvm/gems/ruby-2.0.0-p247@learn-rails/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Home/.rvm/gems/ruby-2.0.0-p247@learn-rails/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:09:05.494103')
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:09:05.494103') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 108ms (Views: 103.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:19 -0700
+
+
+Started GET "/assets/placeholder.png" for 127.0.0.1 at 2013-12-23 21:09:19 -0700
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2013-12-23 21:09:28 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered projects/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/3/edit" for 127.0.0.1 at 2013-12-23 21:09:31 -0700
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered projects/_form.html.erb (13.2ms)
+  Rendered projects/edit.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-23 21:09:34 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/_form.html.erb (6.2ms)
+  Rendered projects/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Z+d08qTP9Z0mMZlsFHfMsMGc4rEralYppjO0VrBJL4=", "project"=>{"name"=>"testting ", "description"=>"jkdsajfladfjskl ", "pledging_ends_on(1i)"=>"2015", "pledging_ends_on(2i)"=>"12", "pledging_ends_on(3i)"=>"24", "target_pledge_amount"=>"541354", "website"=>"fdksag", "team_members"=>"gasdgd", "image_file_name"=>""}, "commit"=>"Create Project"}
+Unpermitted parameters: description, team_members, image_file_name
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("created_at", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:09:49 UTC +00:00], ["name", "testting "], ["pledging_ends_on", Thu, 24 Dec 2015], ["target_pledge_amount", #<BigDecimal:7fe8f976c890,'0.541354E6',9(18)>], ["updated_at", Tue, 24 Dec 2013 04:09:49 UTC +00:00], ["website", "fdksag"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered projects/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-23 21:09:49 -0700
+
+
+Started DELETE "/projects/4" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9Z+d08qTP9Z0mMZlsFHfMsMGc4rEralYppjO0VrBJL4=", "id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mSQL (3.1ms)[0m  [1mDELETE FROM "projects" WHERE "projects"."id" = 4[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:09:54.857264')
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:09:54.857264') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-23 21:09:54 -0700
