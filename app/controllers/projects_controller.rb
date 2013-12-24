@@ -36,6 +36,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :descripton, :target_pledge_amount, :pledging_ends_on, :website)
+    params.require(:project).permit(:name, :image_file_name, :team_members,  :descripton, :target_pledge_amount, :pledging_ends_on, :website)
   end
 end

@@ -6906,3 +6906,413 @@ Processing by ProjectsController#show as HTML
   Rendered projects/show.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.1ms)
   [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Mon, 23 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb700a560,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.186735')
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.186735') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 64ms (Views: 46.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (2.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb374c958,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a community project"], ["name", "Community Project"], ["pledging_ends_on", Tue, 31 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb377e160,'0.2E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-b.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a person project"], ["name", "Personal Project"], ["pledging_ends_on", Fri, 24 Jan 2014], ["target_pledge_amount", #<BigDecimal:7fbdb37ad500,'0.3E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-c.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.249623')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.249623') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (2.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Sun, 22 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb35bd038,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb33e3230,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb37a6200,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb35260c0,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/1/edit" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/_form.html.erb (12.3ms)
+  Rendered projects/edit.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.1ms)
+Started PATCH "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Adeer", "description"=>"Well I cannot build it", "pledging_ends_on(1i)"=>"2013", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"26", "target_pledge_amount"=>"100", "website"=>"http://ikky.com", "team_members"=>"", "image_file_name"=>""}, "commit"=>"Update Project", "id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Unpermitted parameters: description
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "projects" SET "name" = ?, "image_file_name" = ?, "team_members" = ?, "website" = ?, "pledging_ends_on" = ?, "updated_at" = ? WHERE "projects"."id" = 1[0m  [["name", "Adeer"], ["image_file_name", ""], ["team_members", ""], ["website", "http://ikky.com"], ["pledging_ends_on", Sat, 26 Oct 2013], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Sat, 21 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb2d1f458,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.682453') ORDER BY pledging_ends_on[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Thu, 26 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb32e1ff8,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.686595') ORDER BY pledging_ends_on[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb35a7e68,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Fri, 27 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb3754978,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Thu, 26 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb379ff18,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb37d5118,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.698589') ORDER BY pledging_ends_on[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.702587')
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.702587') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/_form.html.erb (5.5ms)
+  Rendered projects/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb32e33a8,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects"
+Started DELETE "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "projects" WHERE "projects"."id" = 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.783705')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.783705') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb69c2a90,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.792674')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.792674') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fbdb2ee9928,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:12:14 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:12:14 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.810287')
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:12:14.810287') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.532395')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.532395') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 70ms (Views: 51.4ms | ActiveRecord: 0.4ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/_form.html.erb (33.9ms)
+  Rendered projects/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+Started POST "/projects" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Kids", "description"=>"A fund raising events for the orphaned kids", "pledging_ends_on(1i)"=>"2014", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"30", "target_pledge_amount"=>"100000", "website"=>"www.poorkids.com", "team_members"=>"gSchool", "image_file_name"=>"placeholder.png"}, "commit"=>"Create Project"}
+Unpermitted parameters: description
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "projects" ("created_at", "image_file_name", "name", "pledging_ends_on", "target_pledge_amount", "team_members", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["image_file_name", "placeholder.png"], ["name", "Kids"], ["pledging_ends_on", Thu, 30 Oct 2014], ["target_pledge_amount", #<BigDecimal:7fdc5cd20600,'0.1E6',9(18)>], ["team_members", "gSchool"], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "www.poorkids.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5d82d480,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects"
+Started DELETE "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "projects" WHERE "projects"."id" = 1
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.753723')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.753723') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cdb0fc0,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["description", "A description of a community project"], ["name", "Community Project"], ["pledging_ends_on", Tue, 31 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cdea2e8,'0.2E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "http://project-b.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["description", "A description of a person project"], ["name", "Personal Project"], ["pledging_ends_on", Fri, 24 Jan 2014], ["target_pledge_amount", #<BigDecimal:7fdc5ce20d98,'0.3E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "http://project-c.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.764294')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.764294') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Mon, 23 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5d9b7aa8,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.933798')
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:09.933798') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cc113b8,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:09 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:09 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5d9f4f70,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Sun, 22 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cd49848,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5ca9b538,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.072932')
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.072932') ORDER BY pledging_ends_on[0m
+  Rendered projects/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cceb6d0,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.081636')[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.081636') ORDER BY pledging_ends_on
+  Rendered projects/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Thu, 26 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cef0458,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.095081') ORDER BY pledging_ends_on[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Fri, 27 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cf40f20,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Thu, 26 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cf584e0,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cf7aea0,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.102435') ORDER BY pledging_ends_on[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Sat, 21 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cfa80d0,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (pledging_ends_on >= '2013-12-24 04:13:10.106143') ORDER BY pledging_ends_on[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5cfd8960,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "pledging_ends_on", "target_pledge_amount", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["description", "A description of a start-up project"], ["name", "Start-Up Project"], ["pledging_ends_on", Wed, 25 Dec 2013], ["target_pledge_amount", #<BigDecimal:7fdc5f813240,'0.1E3',9(36)>], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00], ["website", "http://project-a.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/projects/1/edit" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/_form.html.erb (7.5ms)
+  Rendered projects/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms)
+Started PATCH "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"Adeer", "description"=>"Well I cannot build it", "pledging_ends_on(1i)"=>"2013", "pledging_ends_on(2i)"=>"10", "pledging_ends_on(3i)"=>"26", "target_pledge_amount"=>"100", "website"=>"http://ikky.com", "team_members"=>"", "image_file_name"=>""}, "commit"=>"Update Project", "id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+Unpermitted parameters: description
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "projects" SET "name" = ?, "image_file_name" = ?, "team_members" = ?, "website" = ?, "pledging_ends_on" = ?, "updated_at" = ? WHERE "projects"."id" = 1  [["name", "Adeer"], ["image_file_name", ""], ["team_members", ""], ["website", "http://ikky.com"], ["pledging_ends_on", Sat, 26 Oct 2013], ["updated_at", Tue, 24 Dec 2013 04:13:10 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-12-23 21:13:10 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
