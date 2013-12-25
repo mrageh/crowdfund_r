@@ -8,13 +8,20 @@
 </head>
 <body>
 
-<%= render "layouts/header" %>
+<%= render 'layouts/header' %>
 
-<%= render "layouts/sidebar" %>
+<div id="wrapper">
 
-<%= yield %>
+  <div id="container">
+    <%= render "layouts/sidebar" %>
+    <section id="content">
+      <%= yield %>
+    </section>
+  </div>
 
-<%= render "layouts/footer" %>
+</div>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

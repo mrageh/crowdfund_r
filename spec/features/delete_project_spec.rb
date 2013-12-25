@@ -10,7 +10,7 @@ describe "Deleting a project" do
 
   click_on "Delete"
 
-  expect(current_path).to eq(root_path)
+  expect(current_path).to eq(projects_path)
   expect(Project.count).to eq(0)
   end
 end

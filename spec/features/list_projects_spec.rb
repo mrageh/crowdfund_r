@@ -23,7 +23,6 @@ describe "Viewing the list of projects" do
 
     visit projects_url
 
-    expect(page).to have_text("3 Projects")
     expect(page).to have_text(projectA.name)
     expect(page).to have_text(projectB.name)
     expect(page).to have_text(projectC.name)

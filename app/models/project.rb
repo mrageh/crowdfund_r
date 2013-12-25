@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
     pledging_ends_on < Date.today
   end
 
-  def self.ongoing
+  def self.accepting_pledges
     where("pledging_ends_on >= ?", Time.now).order("pledging_ends_on")
   end
 
