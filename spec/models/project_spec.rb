@@ -16,13 +16,13 @@ describe "A project" do
   it "is only listed if it is accepting pledges" do
     project = Project.create(project_attributes(pledging_ends_on: 2.days.from_now))
 
-    expect(Project.ongoing).to include(project)
+    expect(Project.accepting_pledges).to include(project)
   end
 
   it "is not listed if is not accepting pledges" do
     project = Project.create(project_attributes(pledging_ends_on: 3.days.ago))
 
-    expect(Project.ongoing).not_to include(project)
+    expect(Project.accepting_pledges).not_to include(project)
   end
 
   it "is ordered by which one has the nearest ending date for pledges" do
@@ -30,7 +30,7 @@ describe "A project" do
     project2 = Project.create(project_attributes(pledging_ends_on: 2.days.from_now))
     project3 = Project.create(project_attributes(pledging_ends_on: 1.days.from_now))
 
-    expect(Project.ongoing).to eq([project3, project2, project1])
+    expect(Project.accepting_pledges).to eq([project3, project2, project1])
   end
 
   it "can have a image" do
@@ -38,4 +38,24 @@ describe "A project" do
 
     expect(Project.last.image_blank?).to eq(true)
   end
+
+  it "requires a name"
+
+  it "requires a description"
+
+  it "accepts a description up to 500 characters"
+
+  it "accepts a positive target pledge amount"
+
+  it "rejects a $0 target pledge amount"
+
+  it "rejects a negative target pledge amount"
+
+  it "accepts properly formatted website URLs"
+
+  it "rejects improperly formatted website URLs"
+
+  it "accepts properly formatted image file names"
+
+  it "rejects improperly formatted image file names"
 end
