@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Viewing the list of projects" do
 
-  it "shows the projects stored in the database" do
+  xit "shows the projects stored in the database" do
     projectA = Project.create(name: "Start-Up Project",
                               description: "A description of a start-up project",
                               target_pledge_amount: 100.00,

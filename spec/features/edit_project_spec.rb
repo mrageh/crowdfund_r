@@ -9,7 +9,7 @@ describe "Editing individual movies" do
     expect(page).to have_text("Editing #{project.name}")
 
     fill_in "Name", with: "Adeer"
-    fill_in "Description", with: "Well I cannot build it"
+    fill_in "Description", with: "Well I cannot build it because I dont have any time"
     fill_in "Target pledge amount", with: 100
     select "2013", from: "project[pledging_ends_on(1i)]"
     select "October", from: "project[pledging_ends_on(2i)]"

@@ -36,26 +36,89 @@ describe "A project" do
   it "can have a image" do
     project = Project.create(project_attributes(image_file_name: nil))
 
-    expect(Project.last.image_blank?).to eq(true)
+    expect(project.image_blank?).to eq(true)
   end
 
-  it "requires a name"
+  it "requires a name" do
+    project = Project.create(project_attributes(name: nil))
 
-  it "requires a description"
+    expect(project.valid?).to be_false
+    expect(project.errors[:name].any?).to be_true
+  end
 
-  it "accepts a description up to 500 characters"
+  it "requires a description" do
+    project = Project.create(project_attributes(description: nil))
 
-  it "accepts a positive target pledge amount"
+    expect(project.valid?).to be_false
+    expect(project.errors[:description].any?).to be_true
+  end
 
-  it "rejects a $0 target pledge amount"
+  it "accepts a description up to 500 characters" do
+    project = Project.create(project_attributes(description: "D" * 500))
 
-  it "rejects a negative target pledge amount"
+    expect(project.valid?).to be_true
+    expect(project.errors[:description].any?).to be_false
+  end
 
-  it "accepts properly formatted website URLs"
+  it "accepts a positive target pledge amount" do
+    project = Project.create(project_attributes(target_pledge_amount: 100))
 
-  it "rejects improperly formatted website URLs"
+    expect(project.valid?).to be_true
+    expect(project.errors[:target_pledge_amount].any?).to be_false
+  end
 
-  it "accepts properly formatted image file names"
+  it "rejects a $0 target pledge amount" do
+    project = Project.create(project_attributes(target_pledge_amount: 0))
 
-  it "rejects improperly formatted image file names"
+    expect(project.valid?).to be_false
+    expect(project.errors[:target_pledge_amount].any?).to be_true
+  end
+
+  it "rejects a negative target pledge amount" do
+    project = Project.create(project_attributes(target_pledge_amount: -10))
+
+    expect(project.valid?).to be_false
+    expect(project.errors[:target_pledge_amount].any?).to be_true
+  end
+
+  it "accepts properly formatted website URLs" do
+    sites = %w[http://example.com https://example]
+    sites.each do |site|
+      project = Project.create(project_attributes(website: site))
+
+      expect(project.valid?).to be_true
+      expect(project.errors[:website].any?).to be_false
+    end
+  end
+
+  it "rejects improperly formatted website URLs" do
+    sites = %w[example.com http examplehttp]
+    sites.each do |site|
+      project = Project.new(website: site)
+
+      expect(project.valid?).to be_false
+      expect(project.errors[:website].any?).to be_true
+    end
+  end
+
+  it "accepts properly formatted image file names" do
+    file_names = %w[e.png event.png event.jpg event.gif EVENT.GIF]
+    file_names.each do |file_name|
+      project = Project.new(image_file_name: file_name)
+
+      expect(project.valid?).to be_false
+      expect(project.errors[:image_file_name].any?).to be_false
+    end
+  end
+
+  it "rejects improperly formatted image file names" do
+    file_names = %w[event .jpg .png .gif event.pdf event.doc]
+    file_names.each do |file_name|
+      project = Project.new(image_file_name: file_name)
+
+      expect(project.valid?).to be_false
+      expect(project.errors[:image_file_name].any?).to be_true
+    end
+  end
+
 end

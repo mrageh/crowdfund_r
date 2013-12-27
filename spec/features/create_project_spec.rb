@@ -9,9 +9,9 @@ describe "Creating a new project" do
     expect(page).to have_text("Add New Project")
 
     fill_in "Name", with: "Kids"
-    fill_in "Description", with: "A fund raising events for the orphaned kids"
+    fill_in "Description", with: "A fund raising event that is meant for the orphaned kids"
     fill_in "Target pledge amount", with: 100000
-    fill_in "Website", with: "www.poorkids.com"
+    fill_in "Website", with: "http://poorkids.com"
     fill_in "Team members", with: "gSchool"
     fill_in "Image Filename", with: "placeholder.png"
     select "2014", from: "project[pledging_ends_on(1i)]"
