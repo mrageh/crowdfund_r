@@ -11,6 +11,7 @@ describe "Deleting a project" do
   click_on "Delete"
 
   expect(current_path).to eq(projects_path)
+  expect(page).to have_text("Project successfully deleted!")
   expect(Project.count).to eq(0)
   end
 end

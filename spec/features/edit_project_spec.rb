@@ -19,5 +19,6 @@ describe "Editing individual movies" do
     click_button "Update Project"
 
     expect(page).to have_text("Adeer")
+    expect(page).to have_text("Project successfully updated!")
   end
 end

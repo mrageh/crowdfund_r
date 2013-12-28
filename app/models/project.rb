@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
     message: "must reference a valid URL"
   }
 
-  validates :image_file_name, format: {
+  validates :image_file_name, allow_blank: true,  format: {
     with: /\w+\.(gif|jpg|png)\z/i,
     message: "must reference a GIF, JPG, or PNG image"
   }

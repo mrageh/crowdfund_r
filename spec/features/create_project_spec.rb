@@ -20,6 +20,7 @@ describe "Creating a new project" do
     click_on "Create Project"
 
     expect(current_path).to eq(project_path(Project.last))
+    expect(page).to have_text("Project successfully created!")
     expect(page).to have_text("Kids")
   end
 end
