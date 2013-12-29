@@ -1,6 +1,11 @@
 require "spec_helper"
 
 describe "A project" do
+
+  it "has many pledges"
+
+  it "deletes associated pledges"
+
   it "has expired if the pledging ends on date is in the past" do
     project = Project.new(pledging_ends_on: 2.days.ago)
 
