@@ -2,9 +2,24 @@ require "spec_helper"
 
 describe "A project" do
 
-  it "has many pledges"
+  it "has many pledges" do
+    project = Project.create(project_attributes())
 
-  it "deletes associated pledges"
+    pledge1 = Pledge.create(pledge_attributes(project_id: project.id))
+    pledge2 = Pledge.create(pledge_attributes(project_id: project.id))
+
+    expect(project.pledges).to include(pledge1)
+    expect(project.pledges).to include(pledge2)
+  end
+
+  it "deletes associated pledges" do
+    project = Project.create(project_attributes())
+
+    pledge1 = Pledge.create(pledge_attributes(project_id: project.id))
+    pledge2 = Pledge.create(pledge_attributes(project_id: project.id))
+
+    expect{project.destroy}.to change(Pledge, :count).by (-2)
+  end
 
   it "has expired if the pledging ends on date is in the past" do
     project = Project.new(pledging_ends_on: 2.days.ago)

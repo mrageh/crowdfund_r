@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+
   validates :name, presence: true
 
   validates :description, length: { minimum: 25, maximum: 500 }
@@ -14,6 +15,8 @@ class Project < ActiveRecord::Base
     with: /\w+\.(gif|jpg|png)\z/i,
     message: "must reference a GIF, JPG, or PNG image"
   }
+
+  has_many :pledges, dependent: :destroy
 
   def pledging_expired?
     pledging_ends_on < Date.today

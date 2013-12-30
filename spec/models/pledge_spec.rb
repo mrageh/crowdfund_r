@@ -30,7 +30,23 @@ describe Pledge do
     expect(pledge.errors[:email].any?).to be_true
   end
 
-  it "accepts valid amounts"
+  it "accepts valid amounts" do
+    amounts = Pledge::AMOUNT_LEVELS
+    amounts.each do |amount|
+      pledge = Pledge.create(pledge_attributes(amount: amount))
 
-  it "rejects invalid amounts"
+      expect(pledge.valid?).to be_true
+      expect(pledge.errors[:amount].any?).to be_false
+    end
+  end
+
+  it "rejects invalid amounts" do
+    amounts = [-10.00, 0.00, 13.00]
+    amounts.each do |amount|
+      pledge = Pledge.new(amount: amount)
+
+      expect(pledge.valid?).to be_false
+      expect(pledge.errors[:amount].any?).to be_true
+    end
+  end
 end
