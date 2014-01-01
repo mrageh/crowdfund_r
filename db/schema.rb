@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131229062911) do
+ActiveRecord::Schema.define(version: 20140101100447) do
 
   create_table "pledges", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131229062911) do
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "comment"
   end
 
   add_index "pledges", ["project_id"], name: "index_pledges_on_project_id"
