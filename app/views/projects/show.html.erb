@@ -19,7 +19,10 @@
   <p>
     <%= @project.team_members %>
   </p>
+  <%= link_to "Pledges", project_pledges_path(@project) %>
   <footer>
+    <%= link_to "Pledge!", new_project_pledge_path(@project),
+    class: 'button ok pledge' %>
     <nav>
       <%= link_to "Edit", edit_project_path(@project), class: 'button' %>
       <%= link_to "Delete", @project, 

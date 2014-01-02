@@ -10,7 +10,8 @@ describe "Viewing a list of pledges" do
     project2 = Project.create(project_attributes(name: "Project 2"))
     pledge3 = project2.pledges.create(pledge_attributes(name: "Butler"))
 
-    visit project_pledges_url(project1)
+    visit project_url(project1)
+    click_on "Pledges"
 
     expect(page).to have_text(pledge1.name)
     expect(page).to have_text(pledge2.name)

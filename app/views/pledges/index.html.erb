@@ -9,7 +9,9 @@
       <span class="amount"><%= number_to_currency(p.amount) %></span>
       (<span class="date"><%= time_ago_in_words(p.created_at) %> ago<span>)
       <p>
-        &quot;<%= p.comment %>&quot;
+        <% unless p.comment == "" %>
+          &quot;<%= p.comment %>&quot;
+        <% end %>
       </p>
     </li>
   <% end %>

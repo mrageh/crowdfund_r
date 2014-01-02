@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crowdfund</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+
+<header id="page-header">
+  <div id="masthead">
+    <h1><a href="/">Crowdfund</a></h1>
+  </div>
+</header>
+
+
+<div id="wrapper">
+
+  
+
+  <div id="container">
+    <aside id="sidebar">
+  <nav>
+    <ul>  
+      <li class="all-projects">
+        <a class="button" href="/projects">All Projects</a>
+      </li>
+      <li class="create-project">
+        <a class="button" href="/projects/new">Add New Project</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+    <section id="content">
+      <header id="content-header">
+  <h1>New Pledge for <a href="/projects/1">Start-Up Project</a></h2>
+</header>
+
+<form accept-charset="UTF-8" action="/projects/1/pledges" class="new_pledge" id="new_pledge" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  
+  <fieldset>
+    <ol>
+      <li class="required">
+        <label for="pledge_name">Name</label>
+        <input autofocus="autofocus" id="pledge_name" name="pledge[name]" size="40" type="text" />
+      </li>
+      <li class="required">
+        <label for="pledge_email">Email</label>
+        <input id="pledge_email" name="pledge[email]" size="40" type="text" />
+      </li>
+      <li class="required">
+        <label for="pledge_amount">Amount</label>
+        <select id="pledge_amount" name="pledge[amount]"><option value="">Pick one</option>
+<option value="25">25</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+<option value="500">500</option></select>
+      </li>
+      <li>
+        <label for="pledge_comment">Comment</label>
+        <textarea id="pledge_comment" name="pledge[comment]">
+</textarea>
+      </li>
+    </ol>
+    <p>
+      <input name="commit" type="submit" value="Create Pledge" />
+      <a class="button" href="/projects/1">Cancel</a>
+    </p
+  </fieldset>
+</form>
+
+    </section>
+  </div>
+
+</div>
+
+<footer id="page-footer">
+  <p>  
+    Copyright &copy; 2013 <a href="http://pragmaticstudio.com">The Pragmatic Studio</a>
+  </p>  
+  <p>
+    For educational purposes only.
+  </p>
+</footer>
+
+</body>
+</html>

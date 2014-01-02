@@ -1,5 +1,5 @@
 <%= form_for(@project) do |f| %>
-  <%= render "shared/errors" %>
+  <%= render "shared/errors", object: @project %>
   <fieldset>
     <ol>
       <li class="required">
