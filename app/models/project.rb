@@ -29,4 +29,16 @@ class Project < ActiveRecord::Base
   def image_blank?
     image_file_name.blank?
   end
+
+  def total_amount
+    pledges.sum(:amount)
+  end
+
+  def outstanding_amount
+    target_pledge_amount - total_amount
+  end
+
+  def fully_funded?
+    target_pledge_amount <= total_amount
+  end
 end

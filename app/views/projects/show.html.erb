@@ -19,14 +19,15 @@
   <p>
     <%= @project.team_members %>
   </p>
+  <h3>Outstanding Amount</h3>
+    <%= funded?(@project) %>
   <%= link_to "Pledges", project_pledges_path(@project) %>
   <footer>
-    <%= link_to "Pledge!", new_project_pledge_path(@project),
-    class: 'button ok pledge' %>
+    <%= pledge_link(@project) %>
     <nav>
       <%= link_to "Edit", edit_project_path(@project), class: 'button' %>
-      <%= link_to "Delete", @project, 
-                  class: 'button', 
+      <%= link_to "Delete", @project,
+                  class: 'button',
                   method: :delete, data: { confirm: 'Are you sure?' } %>
     </nav>
   </footer>

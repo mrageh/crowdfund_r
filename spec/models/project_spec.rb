@@ -141,4 +141,31 @@ describe "A project" do
     end
   end
 
+  it "calculates the total amount pledged as the sum of all the pledges" do
+    project = Project.create(project_attributes)
+    3.times {project.pledges.create(pledge_attributes)}
+
+    expect(project.total_amount).to eq(75)
+  end
+
+  it "calculates the pledge amount outstanding" do
+    project = Project.create(project_attributes)
+    3.times {project.pledges.create(pledge_attributes)}
+
+    expect(project.outstanding_amount).to eq(25) #ask someone questionon methods that return a big decimal
+  end
+
+  it "is funded if the target pledge amount has been reached" do
+    project = Project.create(project_attributes)
+    4.times {project.pledges.create(pledge_attributes)}
+
+    expect(project.fully_funded?).to be_true
+  end
+
+  it "is not funded if the target pledge amount has not been reached" do
+    project = Project.create(project_attributes)
+    2.times {project.pledges.create(pledge_attributes)}
+
+    expect(project.fully_funded?).to be_false
+  end
 end
